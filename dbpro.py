@@ -8,7 +8,8 @@ st.title("📦 Meu Catálogo de Produtos (Neon + Streamlit)")
 # Função para conectar usando a URL secreta do Streamlit
 def criar_conexao():
     # Ele vai buscar a URL configurada no painel do Streamlit ou localmente
-    db_url = st.secrets[" DATABASE = postgresql://neondb_owner:npg_U7NzOGjpD9QP@ep-fancy-pond-at08dusi.c-9.us-east-1.aws.neon.tech/neondb?sslmode=require"]
+db_url = st.secrets["DATABASE_URL"]
+
     return psycopg2.connect(db_url)
 
 st.subheader("📊 Produtos Cadastrados em Tempo Real (PostgreSQL na Nuvem)")
